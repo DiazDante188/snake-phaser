@@ -1,9 +1,11 @@
-const CACHE = 'snake-v13';
+const CACHE = 'snake-v14';
 const ASSETS = [
   './',
   './index.html',
   './game.js',
-  './manifest.json',
+  'icons/icon-192.png',
+  'icons/icon-512.png'
+];
   'https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js'
 ];
 
