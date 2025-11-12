@@ -1,4 +1,4 @@
-const CACHE = 'snake-v12';
+const CACHE = 'snake-v13';
 const ASSETS = [
   './',
   './index.html',
