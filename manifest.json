@@ -1,0 +1,16 @@
+{
+  "name": "Snake 8-Bit",
+  "short_name": "Snake",
+  "start_url": ".",
+  "display": "standalone",
+"orientation": "portrait"
+  "background_color": "#000000",
+  "theme_color": "#00ff88",
+  "icons": [
+    {
+      "src": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f40d.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    }
+  ]
+}
