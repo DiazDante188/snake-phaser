@@ -46,5 +46,14 @@
 <script src="./phaser.min.js"></script>
   <!-- Game Script -->
   <script src="./game.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').then(r => {
+      console.log('[SW] registered', r.scope);
+    }).catch(err => console.error('[SW] register failed', err));
+  });
+}
+</script>
 </body>
 </html>
