@@ -42,18 +42,43 @@
   <div class="hud" id="hud">Score: 0 | High: 0 | Lv: 1</div>
   <div id="game"></div>
 
-  <!-- Phaser Engine -->
-<script src="./phaser.min.js"></script>
-  <!-- Game Script -->
-  <script src="./game.js"></script>
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').then(r => {
-      console.log('[SW] registered', r.scope);
-    }).catch(err => console.error('[SW] register failed', err));
-  });
-}
-</script>
+<!-- Phaser Engine Loader -->
+  <script>
+    (function () {
+      function loadGame() {
+        const ph = document.createElement('script');
+        ph.src = './phaser.min.js';
+        ph.defer = true;
+
+        ph.onload = function () {
+          const g = document.createElement('script');
+          g.src = './game.js?v=21';
+          g.defer = true;
+          document.body.appendChild(g);
+        };
+
+        document.body.appendChild(ph);
+      }
+
+      // Give the browser time to paint before heavy work
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadGame, { timeout: 1000 });
+      } else {
+        window.addEventListener('load', loadGame, { once: true });
+      }
+    })();
+  </script>
+
+  <!-- Register Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker
+          .register('/snake-phaser/sw.js', { scope: '/snake-phaser/' })
+          .then(r => console.log('[SW] registered', r.scope))
+          .catch(err => console.error('[SW] register failed', err));
+      });
+    }
+  </script>
 </body>
 </html>
