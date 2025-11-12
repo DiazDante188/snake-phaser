@@ -3,52 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snake 8-Bit</title>
-  <link rel="manifest" href="manifest.json">
+  <title>Snake – Phaser</title>
+
+  <!-- Link to manifest -->
+  <link rel="manifest" href="./manifest.json">
+
   <style>
-    body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: monospace;
-      text-align: center;
-      overflow: hidden;
-    }
-    #hud {
-      position: fixed;
-      top: 8px;
-      left: 8px;
-      color: #0f0;
-      font-size: 14px;
-      background: rgba(0,0,0,0.4);
-      padding: 4px 8px;
-      border-radius: 4px;
-    }
-    canvas {
-      image-rendering: pixelated;
-      display: block;
-      margin: 0 auto;
-    }
+    html, body { margin: 0; background: #111; height: 100%; overflow: hidden; }
+    #game { width: 100%; height: 100%; display: block; }
+    .hud { position: fixed; top: 6px; left: 8px; color: #0f0; font-family: monospace; font-size: 18px; }
   </style>
 </head>
 <body>
-  <div id="hud">Loading…</div>
+  <div class="hud" id="hud">Score: 0 | High: 0 | Lv: 1</div>
   <div id="game"></div>
 
-  <!-- Phaser -->
-  <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
-  <!-- Game logic -->
+  <!-- Phaser 3 -->
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
   <script src="game.js"></script>
-
-  <!-- Optional in-page console for debugging -->
-  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-  <script>eruda.init();</script>
-
-  <!-- Register service worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
-    }
-  </script>
 </body>
 </html>
