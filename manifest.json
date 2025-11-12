@@ -4,10 +4,12 @@
   "description": "Fast 8-bit snake game with swipe controls, audio, power-ups, and offline play.",
   "start_url": "./",
   "scope": "./",
-  "display": "standalone",
+"display": "fullscreen",
   "orientation": "portrait",
-  "background_color": "#000000",
+  "start_url": "./index.html",
   "theme_color": "#00ff88",
+  "background_color": "#000000",
+  "categories": ["games", "arcade", "casual"],
   "icons": [
     {
       "src": "icons/icon-192.png",
