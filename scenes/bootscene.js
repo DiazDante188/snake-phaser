@@ -28,3 +28,5 @@ class BootScene extends Phaser.Scene {
     this.scene.start('MenuScene');
   }
 }
+// ... your BootScene class definition above ...
+window.BootScene = BootScene;
